@@ -1,0 +1,25 @@
+.nav {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color:lightslategray;
+    color:azure;
+    
+}
+
+.nav a {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    color: azure;
+}
+
+.nav a:hover {
+    color: cornflowerblue;
+}
+
+.nav img{
+    width: 10%;
+}
