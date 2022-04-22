@@ -1,4 +1,5 @@
 import React from "react";
+import CartWidget from "../CartWidget";
 import './NavBar.css';
 import logomotorola from './img/logomotorola.jpg';
 
@@ -8,11 +9,12 @@ function NavBar(props) {
         
         <div>
             <ul className="nav">
-            <img src={logomotorola} alt="motorola"/>
+                <img src={logomotorola} alt="motorola"/>
                 <a href="#">APX Familiy</a>
                 <a href="#">MotoTrbo</a>
                 <a href="#">Support</a>
             </ul>
+            <CartWidget />
         </div>
     );
 }
