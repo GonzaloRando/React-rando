@@ -1,0 +1,24 @@
+.item-count-container {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-around;
+    padding: 50px;
+}
+
+.item-count-container div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.item-count-container button {
+    background-color:whitesmoke;
+    transition-duration: 0.4s;
+
+}
+
+.item-count-container button:hover {
+    background-color: #008CBA;
+    color: white;
+}
