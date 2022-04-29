@@ -1,8 +1,4 @@
 .cartPic{
-    position: absolute;
-    top: 10px;
-    right: 140px;
     cursor:pointer;
-    z-index: 100;
 
 }

@@ -1,21 +1,38 @@
 import React from "react";
 import CartWidget from "../CartWidget";
 import './NavBar.css';
-import logomotorola from './img/logomotorola.jpg';
+import logomotorola from './img/logomotorola.png';
+import { Navbar, Container, Nav } from 'react-bootstrap';
 
 
-function NavBar(props) {
+const NavBar = () => {
+
+/* function NavBar(props) { */
     return (
-        
-        <div>
-            <ul className="nav">
-                <img src={logomotorola} alt="motorola"/>
-                <a href="#">APX Familiy</a>
-                <a href="#">MotoTrbo</a>
-                <a href="#">Support</a>
-            </ul>
-            <CartWidget />
-        </div>
+        <Navbar bg="light" variant="light">
+    <Container>
+    <Navbar bg="dark">
+  <Container>
+    <Navbar.Brand href="#home">
+      <img
+        src={logomotorola}
+        width="30"
+        height="30"
+        className="d-inline-block align-top"
+        alt="Motorola logo"
+      />
+    </Navbar.Brand>
+  </Container>
+  </Navbar>
+    <Nav className="me-auto">
+      <Nav.Link href="#home">Home</Nav.Link>
+      <Nav.Link href="#features">Features</Nav.Link>
+      <Nav.Link href="#pricing">Pricing</Nav.Link>
+    </Nav>
+    </Container>
+    <CartWidget />
+  </Navbar>
+
     );
 }
 
