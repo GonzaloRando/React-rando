@@ -1,31 +1,45 @@
 import React, { useState } from 'react';
 import './ItemCount.css';
+import { Button } from 'react-bootstrap';
 
-function ItemCount ({ stock, initial, onAdd}) {
+const ItemCount = ({stock, initial}) => {
     const [count, setCount] = useState(initial);
 
-    function handlePlusButton () {
-        if (count < stock) {
-            setCount(count + 1);
+    const onDecrease = () => {
+        const newValue = count - 1;
+        if (newValue >= initial) {
+            setCount(newValue);
         }
-    }
+    };
 
-    function handleMinusButton () {
-        if (count > 0) {
-            setCount(count - 1);
+    const onIncrease = () => {
+        const newValue = count + 1;
+        if (newValue <= stock) {
+            setCount(newValue)
         }
-    }
+    };
+
+    const onAdd = () => {
+        const message = `Agregaste ${count} producto`;
+        count === 1 ? alert(message) : alert(`${message}s`);
+    };
 
 
 return ( 
-    <div className='item-count-container'>
-        <div>
-            <button onClick={() => handleMinusButton()}>-</button>
-            <input readOnly value={count}/>
-            <button onClick={() => handlePlusButton()}>+</button>
+    <div className='d-flex flex-column'>
+        <div className='d-flex mt-3'>
+            <Button variant='primary' onClick={onDecrease} className="px-3 mx-3">
+                -
+            </Button>{" "}
+            <h3 className="px-3 mx-3">{count}</h3>
+            <Button variant='primary' onClick={onIncrease} className="px-3 mx-3">
+                +
+            </Button>{" "}
         </div>
-        <button onClick={() => (count <= stock) && onAdd()}>Agregar al carrito</button>
+        <Button variant ="danger" onClick={onAdd} className="mt-3">
+            Agregar al Carrito
+        </Button>{" "}
     </div>
-)
-}
-export default ItemCount 
+);
+};
+export default ItemCount; 

@@ -1,19 +1,24 @@
-import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import ItemList from '../ItemList';
-import './item-list-container.css'
+import './item-list-container.css';
+import getData from '../../services/getData';
+import { useState, useEffect } from 'react';
 
-function ItemListContainer ({ greeting }) {
+const ItemListContainer = ({ greeting }) => {
+const [products, setProducts] = useState([])
+useEffect(() => {
+getData
+.then((response) => setProducts(response))
+.catch((error) => console.log("error: ", error))
+}, []
+)
 
-  function prueba() {
-    console.log('prueba prop function');
-  }
 
 return (
-  <div className='list-item-container'>
-    <ItemCount initial={0} stock={5} onAdd={prueba} />
-    <ItemList />
-  </div>
+  <>
+    <ItemCount stock={10} initial={1} />
+    <ItemList products={products}/>
+  </>
 )
 }
 
