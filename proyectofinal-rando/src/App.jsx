@@ -1,6 +1,5 @@
-
 import './App.css';
-import ItemListContainer from './components/ItemListContainer';
+import ItemListContainer from './pages/ItemListContainer/ItemListContainer.jsx';
 import NavBar from './components/NavBar/NavBar';
 
 
@@ -9,7 +8,7 @@ function App() {
     <div className="App">
     <NavBar />
     <div className='containerItem'>
-    <ItemListContainer greeting={'Helping interns in a moment that matters'} />
+    <ItemListContainer />
     </div>
     </div>
 

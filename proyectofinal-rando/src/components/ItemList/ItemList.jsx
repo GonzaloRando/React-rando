@@ -1,4 +1,4 @@
-import Item from "../Item";
+import Item from "../Item/Item";
 
 const ItemList = ({ products }) => {
     return (
@@ -10,6 +10,7 @@ const ItemList = ({ products }) => {
                     name={product.name} 
                     price={product.price}
                     image={product.image}
+                    detail={product.detail}
                     stock={product.stock}
                     quantity={product.quantity}
                     />
